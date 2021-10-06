@@ -48,6 +48,8 @@ public static void sameValue(int[] arrOne) {
     for (int value : arrOne) {
         if (value == arrOne[i]) {
             System.out.println(value + "=" + i);
+            i++;
+            continue;
         }
         System.out.println("There are no elements with the same value");
     }
