@@ -8,6 +8,8 @@ public class Assignment2 {
         oddElements(arrOne);
         System.out.println();
         countOddElements(arrOne);
+        System.out.println();
+        sameValue(arrOne);
 
     }
 
@@ -24,22 +26,31 @@ public class Assignment2 {
     public static void oddElements(int[] arrOne) {
         int i = 0;
         for (int value : arrOne) {
-            if (value % 2 == 0) {
+            if (value % 2 != 1) {
                 System.out.println(value);
-                continue;
+
             }
         }
 
     }
+
     public static void countOddElements(int[] arrOne) {
-        int i=0;
-        int sum=0;
-        for (int value: arrOne) {
-            if (value % 2 == 0) {
-                sum = sum+1;
-                continue;
-                System.out.println(sum);
-            }
+             int sum = 0;
+        for (int value : arrOne) {
+            if (value % 2 != 1) {
+                               sum = sum+1;
+                System.out.println(sum);      }
+        }
+}
+
+public static void sameValue(int[] arrOne) {
+        int i = 0;
+    for (int value : arrOne) {
+        if (value == arrOne[i]) {
+            System.out.println(value + "=" + i);
+        }
+        System.out.println("There are no elements with the same value");
+    }
+
         }
     }
-}
