@@ -9,7 +9,7 @@ public class Main {
 
 for (int i=0; i< arrayPigs.length;i++)
 {
-    arrayPigs[i] = "Piggy";
+    arrayPigs[i] = "Piggy" + i;
     System.out.println(arrayPigs[i]);
 }
 }
