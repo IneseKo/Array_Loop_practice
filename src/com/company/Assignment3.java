@@ -6,7 +6,7 @@ public class Assignment3 {
     private static Scanner inputGrade = new Scanner(System.in);
 
     public static void main(String[] args) {
-        byte[] arrOne = new byte[3];
+        byte[] arrOne = new byte[5];
         arrFill(arrOne);
         arrPrint(arrOne);
         failedStudentCalculation(arrOne);
@@ -63,17 +63,20 @@ public class Assignment3 {
     }
 
     public static void histogram(byte[] arrOne) {
-        int studentAmount = 0;
-        int grade = 0;
 
-        for (int i = 0; i < arrOne.length; i++) {
-            for (int ignore : arrOne) {
-                if (arrOne[i] == i) {
+        int gradePr = 0;
+
+        while (gradePr <= 10) {
+            int studentAmount = 0;
+            for (int grade : arrOne) {
+                if (grade == gradePr) {
+
                     studentAmount++;
-                                }
-                System.out.println(studentAmount + " students with the grade " + grade);
-                grade++;
+                }
+
             }
+            System.out.println(studentAmount + " students with the grade " + gradePr);
+            gradePr++;
         }
     }
 
