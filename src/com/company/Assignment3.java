@@ -3,10 +3,9 @@ package com.company;
 import java.util.Scanner;
 
 public class Assignment3 {
-    private static Scanner inputGrade = new Scanner(System.in);
 
     public static void main(String[] args) {
-        byte[] arrOne = new byte[5];
+        byte[] arrOne = new byte[10];
         arrFill(arrOne);
         arrPrint(arrOne);
         failedStudentCalculation(arrOne);
@@ -17,26 +16,26 @@ public class Assignment3 {
     public static void arrFill(byte[] arrOne) {
         int i = 0;
         int sequenceNo = 1;
-        byte grade = 0;
-        while (sequenceNo <= arrOne.length) {
-            System.out.println("Please enter grade No" + sequenceNo);
 
-            if (inputGrade.hasNextShort() && grade >= 0 && grade <= 10) {
-                grade = inputGrade.nextByte();
-                arrOne[i] = grade;
+        while (sequenceNo <= arrOne.length) {
+            Scanner inputGrade = new Scanner(System.in);
+            System.out.println("Please enter grade No" + sequenceNo);
+            byte grade = inputGrade.nextByte();
+
+            if (grade >= 0 && grade <= 10) {
+                arrOne[i++] = grade;
                 sequenceNo++;
-                i++;
+
             } else {
-                System.out.println("Wrong data. Please restart the program!");
-                break;
+                System.out.println("Wrong data");
             }
         }
     }
 
     public static void arrPrint(byte[] arrOne) {
         System.out.println("The grades You entered are as follows:");
-        for (int i = 0; i < arrOne.length; i++) {
-            System.out.println(arrOne[i]);
+        for (byte grade : arrOne) {
+            System.out.println(grade);
         }
     }
 
@@ -59,7 +58,7 @@ public class Assignment3 {
                 count++;
             }
         }
-        System.out.println("\nThere are " + count + " students that have A grade.");
+        System.out.println("\nThere are " + count + " students that have A grade.\n");
     }
 
     public static void histogram(byte[] arrOne) {
