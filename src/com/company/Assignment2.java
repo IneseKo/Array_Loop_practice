@@ -44,7 +44,7 @@ public class Assignment2 {
         }
         System.out.println("\nThere are " + count + " odd Elements in this Array.");
     }
-
+//
     public static void sameValue(int[] arrOne) {
         for (int i = 0; i < arrOne.length; i++) {
             for (int j = i + 1; j < arrOne.length; j++) {
